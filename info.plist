@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.okjike.alfred.contact</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>2B80C7FC-9E1A-4AF8-8B39-B847CB3C0C75</key>
+		<array/>
+		<key>5D52B7DE-5A25-4316-8AE9-EBD1A2680687</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D4F08E0-0856-4472-94D2-5125FC5E2E71</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7913DC03-EF61-4177-A00D-AEB06BFF11BB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8A67E733-56D3-4498-83BE-27ED2D171598</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D8C56C9C-52CE-45A0-B640-39830D4C5AB2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7913DC03-EF61-4177-A00D-AEB06BFF11BB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>JiJian</string>
+	<key>description</key>
+	<string>Contacts with Jike ID</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Jike Staff Contact</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>jk</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>💪 ing</string>
+				<key>script</key>
+				<string>/usr/bin/python jike_staff.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>e.g 搞即建的</string>
+				<key>title</key>
+				<string>Search for Jiker</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2B80C7FC-9E1A-4AF8-8B39-B847CB3C0C75</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>jktoken</string>
+				<key>subtext</key>
+				<string>Paste your token here and hit ENTER</string>
+				<key>text</key>
+				<string>Setup your Phabricator token</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D8C56C9C-52CE-45A0-B640-39830D4C5AB2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/python jike_staff.py --setkey "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7913DC03-EF61-4177-A00D-AEB06BFF11BB</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Your Phabricator token is saved</string>
+				<key>title</key>
+				<string>Token Saved</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8A67E733-56D3-4498-83BE-27ED2D171598</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>jktoken</string>
+				<key>subtext</key>
+				<string>Goto 'Conduit API Tokens' page</string>
+				<key>text</key>
+				<string>Get API token from Phabricator</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5D52B7DE-5A25-4316-8AE9-EBD1A2680687</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>http://ph.in.ruguoapp.com/settings</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>2D4F08E0-0856-4472-94D2-5125FC5E2E71</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>通过即刻ID或者名字查找同事信息
+
+脚本需要Phabricator的API Token授权，读取员工通讯录。
+使用前需要去Phabricator (http://ph.in.ruguoapp.com/settings) 生成 token，并用关键词 'jktoken' 存储于系统钥匙串中。
+
+关键词：
+
+- 'jk': 支持用即刻ID或姓名查询同事信息，Cmd+C 可以复制其邮箱，Cmd+L 可以显示其职位
+- 'jktoken': 跳转去Phabricator生成token的页面，或者存储token
+
+Phabricator Token 页面位于左边栏 'SESSIONS AND LOGS' 下 'Conduit API Token'选项</string>
+	<key>uidata</key>
+	<dict>
+		<key>2B80C7FC-9E1A-4AF8-8B39-B847CB3C0C75</key>
+		<dict>
+			<key>xpos</key>
+			<integer>140</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+		<key>2D4F08E0-0856-4472-94D2-5125FC5E2E71</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
+		<key>5D52B7DE-5A25-4316-8AE9-EBD1A2680687</key>
+		<dict>
+			<key>xpos</key>
+			<integer>140</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
+		<key>7913DC03-EF61-4177-A00D-AEB06BFF11BB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>8A67E733-56D3-4498-83BE-27ED2D171598</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>D8C56C9C-52CE-45A0-B640-39830D4C5AB2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>140</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/Sorosliu1029/Alfred-Phabricator-Addressbook/releases</string>
+</dict>
+</plist>

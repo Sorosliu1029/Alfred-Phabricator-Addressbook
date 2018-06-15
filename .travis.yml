@@ -1,0 +1,16 @@
+language: python
+python:
+  - "2.7"
+
+install:
+  - pip install --target=. Alfred-Workflow
+script: true
+before_deploy: sed -i.bak 's/\[version\]/'"$TRAVIS_BRANCH-$TRAVIS_COMMIT"'/g' info.plist && zip -rv jike_contact.alfredworkflow *
+deploy:
+  provider: releases
+  api_key:
+    secure: $GITHUB_TOKEN
+  file: jike_contact.alfredworkflow
+  skip_cleanup: true
+  on:
+    tags: true
