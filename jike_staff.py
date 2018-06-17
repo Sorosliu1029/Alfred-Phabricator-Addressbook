@@ -34,7 +34,8 @@ def extract_data(raw_content):
     return result[1:]
 
 def search_key(staff):
-    elements = [staff['name'], staff['jkid']]
+    email_entity = staff['email'].split('@')[0]
+    elements = [staff['name'], staff['jkid'], email_entity]
     return u' '.join(elements)
             
 
@@ -77,8 +78,8 @@ def main(wf):
 
     for jiker in staffs:
         wf.add_item(
-            title=jiker['name'],
-            subtitle=jiker['jkid'],
+            title=jiker['name'] + u' ' + jiker['jkid'],
+            subtitle=jiker['email'],
             largetext=jiker['job'],
             copytext=jiker['email'],
             valid=True, 
