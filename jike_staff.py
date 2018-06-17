@@ -78,7 +78,7 @@ def main(wf):
 
     for jiker in staffs:
         wf.add_item(
-            title=jiker['name'] + u' ' + jiker['jkid'],
+            title=jiker['name'] + u' / ' + jiker['jkid'],
             subtitle=jiker['email'],
             largetext=jiker['job'],
             copytext=jiker['email'],
